@@ -139,7 +139,7 @@ function calendar($filter,$templateRequest,$compile){
 		var firstDateInWeek = getDateForWeekNumber(weekNumber);
 		scope.weekNumber = weekNumber;
 		scope.selectedMonthName = monthNames[moment().isoWeek(weekNumber-1).month()];
-		scope.selectedYear = moment().isoWeek(weekNumber).year();
+		scope.selectedYear = moment().year();
 		buildWeek(scope)
 	}
 

@@ -1,2 +1,6 @@
 dist
 .tmp
+.idea
+.settings
+.project
+calendar.iml
