@@ -1,0 +1,11 @@
+Develop a calendar viewer in Angular 1.5.x that has the following features:
+
+- different views for day / week / month
+- the calendar uses the timezone settings of the browser for displaying
+- can jump to/show/highlight the current day by pressing on a “today” button
+- can browse left/right through months/weeks/days
+- the calendar shows events that can be managed with a seperate event list (can be on the same page as the calendar view). Events have a title, description, start-date and time, and end-time and end-date. Events can be added or removed from the event-list, and this should be updated in the calendar view.
+- events can have custom tags, and in the calendar view there is a field that can be used to filter only the events that have this tag.
+- the application can be build and run with common build tools from a Github repo
+
+This exercise can be done on your own time, no time-limit or any limitations except using Angular 1.5. 

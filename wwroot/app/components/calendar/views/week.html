@@ -1,0 +1,8 @@
+<div class="header">
+    <i class="fa fa-angle-left" ng-click="previous('week')"></i>
+    <span>Week {{weekNumber}} -  {{selectedMonthName}} {{selectedYear}}</span>
+    <i class="fa fa-angle-right" ng-click="next('week')"></i>
+    <button ng-click="today()">Today</button>
+    <button ng-click="show('month')">Month</button>
+</div>
+	<div class="weekDay" ng-repeat="day in week">{{day.date}}</div>

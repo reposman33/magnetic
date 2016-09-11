@@ -1,0 +1,32 @@
+<div class="header">
+    <i class="fa fa-angle-left" ng-click="previous('month')"></i>
+    <span>{{selectedMonthName}} - {{selectedYear}}</span>
+    <i class="fa fa-angle-right" ng-click="next('month')"></i>
+    <button ng-click="today()">Today</button>
+    <button ng-click="show('month')">Month</button>
+</div>
+<div class="week names">
+    <span class="day">Zo</span>
+    <span class="day">Ma</span>
+    <span class="day">Di</span>
+    <span class="day">Wo</span>
+    <span class="day">Do</span>
+    <span class="day">Vr</span>
+    <span class="day">Za</span>
+    <span class="day">Week</span>
+</div>
+<div class="week" ng-repeat="week in weeks">
+    <span
+    	ng-if="$index < 7"
+    	class="day"
+    	ng-class="{today: day.isToday,'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected)}"
+    	ng-click="show('day')"
+    	ng-repeat="day in week">{{day.date}}
+    </span>
+    <span
+    	ng-if="$index == 7"
+    	class="weekNumber"
+    	ng-click="show({calendarMode:'week',weekNumber:day.weekNumber})"
+    	ng-repeat="day in week">{{day.weekNumber}}
+    </span>
+</div>

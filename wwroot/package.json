@@ -1,0 +1,15 @@
+{
+  "name": "calendar",
+  "version": "1.0.0",
+  "description": "code assignment Magnetic.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marc Bakker",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^2.7.1",
+    "moment": "^2.14.1"
+  }
+}
