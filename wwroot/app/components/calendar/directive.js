@@ -98,6 +98,7 @@ function calendar($filter,$templateRequest,$compile){
 		scope.week = week;
 	}
 
+
 	// ===== Update the calendar =====
 
 	function next(scope,calendarMode){
