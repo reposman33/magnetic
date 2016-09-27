@@ -4,6 +4,7 @@
 angular.module('calendarApp')
 .directive('calendar',['$filter','$templateRequest','$compile',calendar])
 
+// The actual directive
 function calendar($filter,$templateRequest,$compile){
 	var weekdays = ["Zo","Ma","Di","Wo","Do","Vr","Za"];
 	var monthNames = ["Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"];
@@ -22,10 +23,12 @@ function calendar($filter,$templateRequest,$compile){
 		scope.previous = function(calendarMode){previous(scope,calendarMode);};
 		scope.today = function(){today(scope);};
 		scope.show = function(config){buildCalendar(scope,element,config)};
+		// the main function
 		buildCalendar(scope,element,{calendarMode:calendarMode});
 	}
 
 	function buildCalendar(scope,element,config){
+		// build the data structure for calendar and assign to scope
 		if(config.calendarMode == "month"){
 			buildMonth(scope);
 		}
@@ -40,6 +43,7 @@ function calendar($filter,$templateRequest,$compile){
 		getTemplateUrl(scope,element,config.calendarMode);
 	}
 	
+	// initialize the correct template (month/week/day)
 	function getTemplateUrl(scope,element,calendarMode){
 		var templateUrl = "";
 		if(calendarMode == 'week'){
@@ -52,9 +56,11 @@ function calendar($filter,$templateRequest,$compile){
 			templateUrl = "month.html";
 		}	
 		$templateRequest("/app/components/calendar/views/" + templateUrl).then(function(html){
+			// retrieve the empty view
 			var template = angular.element(html);
 			element.empty();
 			element.append(template);
+			// compile the template
 			$compile(template)(scope);
 		},this);
 	}
